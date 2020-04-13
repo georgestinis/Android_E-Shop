@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">E-Shop</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string-array name="user_type">
+        <item>Customer</item>
+        <item>Admin</item>
+    </string-array>
+    <string-array name="queries_array">
+        <item>query 1</item>
+        <item>query 2</item>
+        <item>query 3</item>
+        <item>query 4</item>
+        <item>query 5</item>
+        <item>query 6</item>
+        <item>query 7</item>
+    </string-array>
+    <string-array name="queries_description_array">
+        <item>Το υπόλοιπο της ποσότητας ανά προϊόν</item>
+        <item>Τις συνολικές πωλήσεις</item>
+        <item>Τις πωλήσεις ανά προϊόν</item>
+        <item>Την αναλυτική κατάσταση προϊόντων</item>
+        <item>Την αναλυτική κατάσταση πελάτων</item>
+        <item>Την αναλυτική κατάσταση πωλήσεων</item>
+        <item>Την αναλυτική κατάσταση καλαθιού</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
