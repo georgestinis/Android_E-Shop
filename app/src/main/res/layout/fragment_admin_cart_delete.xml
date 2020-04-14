@@ -28,6 +28,15 @@
         android:inputType="textPersonName"
         android:hint="Insert Username"/>
 
+    <EditText
+        android:id="@+id/admin_cart_delete_pid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="Insert Product Id"
+        android:inputType="number" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

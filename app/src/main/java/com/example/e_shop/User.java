@@ -6,8 +6,10 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "Users")
-public class User {
+public class User implements Serializable {
     @PrimaryKey
     @NonNull
     private String username;

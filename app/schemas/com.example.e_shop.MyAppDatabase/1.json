@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "90331c2026a8872025601872642deb9e",
+    "identityHash": "c8963864f7ed7bf8a79de91e398a0b4b",
     "entities": [
       {
         "tableName": "Users",
@@ -173,7 +173,7 @@
       },
       {
         "tableName": "Sales",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `user_username` TEXT, `product_id` INTEGER NOT NULL, `quantity` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`user_username`) REFERENCES `Users`(`username`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`product_id`) REFERENCES `Products`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_username` TEXT, `product_id` INTEGER NOT NULL, `quantity` INTEGER NOT NULL, FOREIGN KEY(`user_username`) REFERENCES `Users`(`username`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`product_id`) REFERENCES `Products`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -204,7 +204,7 @@
           "columnNames": [
             "id"
           ],
-          "autoGenerate": false
+          "autoGenerate": true
         },
         "indices": [
           {
@@ -253,7 +253,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '90331c2026a8872025601872642deb9e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c8963864f7ed7bf8a79de91e398a0b4b')"
     ]
   }
 }

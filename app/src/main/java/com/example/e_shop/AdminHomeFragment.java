@@ -1,5 +1,6 @@
 package com.example.e_shop;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class AdminHomeFragment extends Fragment implements View.OnClickListener {
-    Button insert, delete, update, query;
+    Button insert, delete, update, query, logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -20,10 +21,12 @@ public class AdminHomeFragment extends Fragment implements View.OnClickListener 
         delete = view.findViewById(R.id.admin_delete);
         update = view.findViewById(R.id.admin_update);
         query = view.findViewById(R.id.admin_query);
+        logout = view.findViewById(R.id.admin_logout);
         insert.setOnClickListener(this);
         delete.setOnClickListener(this);
         update.setOnClickListener(this);
         query.setOnClickListener(this);
+        logout.setOnClickListener(this);
         return view;
     }
 
@@ -41,6 +44,10 @@ public class AdminHomeFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.admin_query:
                 MainActivity3.fragmentManager.beginTransaction().replace(R.id.fragment_container3, new QueryFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.admin_logout:
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                startActivity(i);
                 break;
         }
     }

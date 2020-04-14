@@ -67,4 +67,9 @@ public interface MyDao {
     @Query("SELECT * FROM Cart")
     public List<Cart> getCart();
 
+    @Query("SELECT * FROM Products where id = :inputid")
+    public Product getProduct(int inputid);
+
+    @Query("SELECT * FROM Users WHERE username = :username AND password = :password")
+    public User getUser(String username, String password);
 }

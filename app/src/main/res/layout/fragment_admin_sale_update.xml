@@ -22,14 +22,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/admin_sale_update_id"
-        android:ems="10"
-        android:layout_margin="16dp"
-        android:inputType="number"
-        android:hint="Insert Id"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/admin_sale_update_username"
         android:ems="10"
         android:layout_margin="16dp"

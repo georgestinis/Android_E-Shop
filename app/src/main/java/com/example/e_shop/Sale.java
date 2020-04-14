@@ -20,7 +20,7 @@ import androidx.room.PrimaryKey;
         },
         indices = {@Index("user_username"), @Index("product_id")})
 public class Sale {
-    @PrimaryKey
+    @PrimaryKey (autoGenerate = true)
     @NonNull
     private int id;
 
@@ -30,9 +30,15 @@ public class Sale {
     @Ignore
     public Sale() {
     }
-
+    @Ignore
     public Sale(int id, String user_username, int product_id, int quantity) {
         this.id = id;
+        this.user_username = user_username;
+        this.product_id = product_id;
+        this.quantity = quantity;
+    }
+
+    public Sale(String user_username, int product_id, int quantity) {
         this.user_username = user_username;
         this.product_id = product_id;
         this.quantity = quantity;
