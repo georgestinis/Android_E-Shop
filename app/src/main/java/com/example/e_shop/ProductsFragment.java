@@ -32,7 +32,7 @@ public class ProductsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (listView.getItemAtPosition(position) instanceof Product) {
-                    Product product = (Product)(listView.getItemAtPosition(position));
+                    Product product = (Product) (listView.getItemAtPosition(position));
                     MainActivity2.fragmentManager.beginTransaction().replace(R.id.fragment_container2, new ProductPageFragment(product)).addToBackStack(null).commit();
                 }
             }

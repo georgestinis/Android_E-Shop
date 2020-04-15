@@ -11,10 +11,10 @@ import android.widget.Button;
 
 public class AdminInsertFragment extends Fragment implements View.OnClickListener {
     Button user, product, cart, sale;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_admin_insert, container, false);
         user = view.findViewById(R.id.admin_user_insert);
         product = view.findViewById(R.id.admin_product_insert);
@@ -24,12 +24,12 @@ public class AdminInsertFragment extends Fragment implements View.OnClickListene
         product.setOnClickListener(this);
         cart.setOnClickListener(this);
         sale.setOnClickListener(this);
-        return  view;
+        return view;
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.admin_user_insert:
                 MainActivity3.fragmentManager.beginTransaction().replace(R.id.fragment_container3, new AdminUserInsertFragment()).addToBackStack(null).commit();
                 break;

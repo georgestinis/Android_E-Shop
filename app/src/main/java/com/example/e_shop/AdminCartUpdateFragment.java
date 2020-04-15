@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class AdminCartUpdateFragment extends Fragment {
     private EditText username, p_id, quantity;
     private Button submit;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,13 +29,13 @@ public class AdminCartUpdateFragment extends Fragment {
                 int var_pid = 0;
                 try {
                     var_pid = Integer.parseInt(p_id.getText().toString());
-                } catch (NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
                 int var_quantity = 0;
                 try {
                     var_quantity = Integer.parseInt(quantity.getText().toString());
-                } catch (NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
                 try {
@@ -44,7 +45,7 @@ public class AdminCartUpdateFragment extends Fragment {
                     username.setText("");
                     p_id.setText("");
                     quantity.setText("");
-                } catch (Exception e){
+                } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                 }

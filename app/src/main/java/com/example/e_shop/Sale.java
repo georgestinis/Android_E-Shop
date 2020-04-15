@@ -20,16 +20,18 @@ import androidx.room.PrimaryKey;
         },
         indices = {@Index("user_username"), @Index("product_id")})
 public class Sale {
-    @PrimaryKey (autoGenerate = true)
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
 
     private String user_username;
     private int product_id;
     private int quantity;
+
     @Ignore
     public Sale() {
     }
+
     @Ignore
     public Sale(int id, String user_username, int product_id, int quantity) {
         this.id = id;

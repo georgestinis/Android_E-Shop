@@ -13,20 +13,21 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SignUpFragment extends Fragment {
     private Button bck_to_login, signup_btn;
     private Spinner spinner;
     private ArrayAdapter<CharSequence> adapter;
     private EditText username, pass, name, surname, address;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
-        adapter = ArrayAdapter.createFromResource(getActivity(),R.array.user_type, R.layout.support_simple_spinner_dropdown_item);
+        adapter = ArrayAdapter.createFromResource(getActivity(), R.array.user_type, R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner = view.findViewById(R.id.spinner);
-        System.out.println(adapter.getItem(0));
         spinner.setAdapter(adapter);
         bck_to_login = view.findViewById(R.id.bck_to_login_btn);
         signup_btn = view.findViewById(R.id.register_btn);
@@ -44,15 +45,19 @@ public class SignUpFragment extends Fragment {
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                MainActivity.myAppDatabase.myDao().addUser(new User(username.getText().toString(), pass.getText().toString(), name.getText().toString(),
-                        surname.getText().toString(), address.getText().toString(), spinner.getSelectedItem().toString()));
-                username.setText("");
-                pass.setText("");
-                name.setText("");
-                surname.setText("");
-                address.setText("");
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+                try {
+                    MainActivity.myAppDatabase.myDao().addUser(new User(username.getText().toString(), pass.getText().toString(), name.getText().toString(),
+                            surname.getText().toString(), address.getText().toString(), spinner.getSelectedItem().toString()));
+                    username.setText("");
+                    pass.setText("");
+                    name.setText("");
+                    surname.setText("");
+                    address.setText("");
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+                } catch (Exception e) {
+                    String message = e.getMessage();
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                }
             }
         });
         return view;

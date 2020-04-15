@@ -11,6 +11,7 @@ public class MainActivity3 extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static MyAppDatabase myAppDatabase;
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +20,8 @@ public class MainActivity3 extends AppCompatActivity {
         myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "eshopDB").allowMainThreadQueries().fallbackToDestructiveMigration().build();
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if (findViewById(R.id.fragment_container3) != null){
-            if (savedInstanceState != null){
+        if (findViewById(R.id.fragment_container3) != null) {
+            if (savedInstanceState != null) {
                 return;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container3,

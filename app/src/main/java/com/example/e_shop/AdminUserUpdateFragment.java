@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class AdminUserUpdateFragment extends Fragment {
     private EditText username, password, name, surname, type, address;
     private Button submit;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class AdminUserUpdateFragment extends Fragment {
                     surname.setText("");
                     address.setText("");
                     type.setText("");
-                } catch (Exception e){
+                } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                 }

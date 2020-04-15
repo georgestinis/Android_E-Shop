@@ -21,6 +21,7 @@ public class QueryFragment extends Fragment {
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
     int test;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,10 +52,10 @@ public class QueryFragment extends Fragment {
             public void onClick(View v) {
                 querytextresult.setText("test" + test);
                 String result = "";
-                switch (test){
+                switch (test) {
                     case 1:
                         List<ResultStringInt> quantities = MainActivity3.myAppDatabase.myDao().getQuantity();
-                        for (ResultStringInt i : quantities){
+                        for (ResultStringInt i : quantities) {
                             String product = i.getField1();
                             int quantity = i.getField2();
                             result = result + "\n Product Name: " + product + "\n Quantity: " + quantity;
@@ -68,7 +69,7 @@ public class QueryFragment extends Fragment {
                         break;
                     case 3:
                         List<ResultTwoInts> salesPerProduct = MainActivity3.myAppDatabase.myDao().getSalesPerProduct();
-                        for (ResultTwoInts i : salesPerProduct){
+                        for (ResultTwoInts i : salesPerProduct) {
                             int product = i.getField1();
                             int sale = i.getField2();
                             result = result + "\n Product Id: " + product + "\n Sales: " + sale;
@@ -77,7 +78,7 @@ public class QueryFragment extends Fragment {
                         break;
                     case 4:
                         List<Product> products = MainActivity3.myAppDatabase.myDao().getProducts();
-                        for (Product i : products){
+                        for (Product i : products) {
                             int p_id = i.getId();
                             String p_name = i.getName();
                             float price = i.getPrice();
@@ -89,7 +90,7 @@ public class QueryFragment extends Fragment {
                         break;
                     case 5:
                         List<User> users = MainActivity3.myAppDatabase.myDao().getUsers();
-                        for (User i : users){
+                        for (User i : users) {
                             String username = i.getUsername();
                             String password = i.getPassword();
                             String u_name = i.getName();
@@ -102,7 +103,7 @@ public class QueryFragment extends Fragment {
                         break;
                     case 6:
                         List<Sale> sales1 = MainActivity3.myAppDatabase.myDao().getSales();
-                        for (Sale i : sales1){
+                        for (Sale i : sales1) {
                             int s_id = i.getId();
                             String u_username = i.getUser_username();
                             int p_id = i.getProduct_id();
@@ -113,7 +114,7 @@ public class QueryFragment extends Fragment {
                         break;
                     case 7:
                         List<Cart> cart = MainActivity3.myAppDatabase.myDao().getCart();
-                        for (Cart i : cart){
+                        for (Cart i : cart) {
                             String u_username = i.getUser_username();
                             int p_id = i.getProduct_id();
                             int p_quantity = i.getQuantity();

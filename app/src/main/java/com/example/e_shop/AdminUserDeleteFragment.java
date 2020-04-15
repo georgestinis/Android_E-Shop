@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class AdminUserDeleteFragment extends Fragment {
     private EditText username;
     private Button delete;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class AdminUserDeleteFragment extends Fragment {
                     MainActivity3.myAppDatabase.myDao().deleteUser(user);
                     Toast.makeText(getActivity(), "Έγινε η διαγραφή", Toast.LENGTH_LONG).show();
                     username.setText("");
-                } catch (Exception e){
+                } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                 }

@@ -17,10 +17,10 @@ import android.widget.Toast;
 public class LoginFragment extends Fragment {
     private Button go_to_signup, login;
     private EditText username, password;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         go_to_signup = view.findViewById(R.id.signup_btn);
         login = view.findViewById(R.id.login_btn);
@@ -37,29 +37,21 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 try {
                     User user = MainActivity.myAppDatabase.myDao().getUser(username.getText().toString(), password.getText().toString());
-                    if (user.getType().equals("Customer")){
+                    if (user.getType().equals("Customer")) {
                         Intent i = new Intent(getActivity(), MainActivity2.class);
                         i.putExtra("userobject", user);
                         startActivity(i);
-                    }
-                    else if (user.getType().equals("Admin")) {
+                    } else if (user.getType().equals("Admin")) {
                         Intent i = new Intent(getActivity(), MainActivity3.class);
                         startActivity(i);
                     }
                     username.setText("");
                     password.setText("");
-                } catch (NullPointerException ex){
+                } catch (NullPointerException ex) {
                     Toast.makeText(getActivity(), "Λάθος κωδικός ή username", Toast.LENGTH_LONG).show();
                     username.setText("");
                     password.setText("");
                 }
-//                Einai gia na katharizei to proigoymeno activity
-
-//                TODO - Na metafero antikeimeno toy user
-//                Bundle bundle = new Bundle();
-//                bundle.putInt("result", res);
-//                i.putExtras(bundle);
-
             }
         });
         return view;

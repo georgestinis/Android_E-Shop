@@ -18,6 +18,7 @@ public class User implements Serializable {
     private String name;
     private String surname;
     private String address;
+
     @Ignore
     public User() {
     }

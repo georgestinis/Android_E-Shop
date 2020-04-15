@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class AdminCartDeleteFragment extends Fragment {
     private EditText username, pid;
     private Button delete;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,9 +29,9 @@ public class AdminCartDeleteFragment extends Fragment {
                     Cart cart = new Cart();
                     cart.setUser_username(username.getText().toString());
                     int id = 0;
-                    try{
+                    try {
                         id = Integer.parseInt(pid.getText().toString());
-                    } catch (NumberFormatException ex){
+                    } catch (NumberFormatException ex) {
                         System.out.println("Could not parse");
                     }
                     cart.setProduct_id(id);
@@ -38,7 +39,7 @@ public class AdminCartDeleteFragment extends Fragment {
                     Toast.makeText(getActivity(), "Έγινε η διαγραφή", Toast.LENGTH_LONG).show();
                     username.setText("");
                     pid.setText("");
-                } catch (Exception e){
+                } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                 }

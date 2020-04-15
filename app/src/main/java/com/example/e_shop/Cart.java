@@ -25,6 +25,7 @@ public class Cart {
     @NonNull
     private int product_id;
     private int quantity;
+
     @Ignore
     public Cart() {
     }

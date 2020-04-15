@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 public class LogoutFragment extends Fragment {
     Button logout;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

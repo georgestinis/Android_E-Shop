@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class AdminDeleteFragment extends Fragment implements View.OnClickListener {
     Button user, product, cart, sale;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class AdminDeleteFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.admin_user_delete:
                 MainActivity3.fragmentManager.beginTransaction().replace(R.id.fragment_container3, new AdminUserDeleteFragment()).addToBackStack(null).commit();
                 break;

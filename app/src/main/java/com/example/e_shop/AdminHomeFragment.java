@@ -32,7 +32,7 @@ public class AdminHomeFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.admin_insert:
                 MainActivity3.fragmentManager.beginTransaction().replace(R.id.fragment_container3, new AdminInsertFragment()).addToBackStack(null).commit();
                 break;

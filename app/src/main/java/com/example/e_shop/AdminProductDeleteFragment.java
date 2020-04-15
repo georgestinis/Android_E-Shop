@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class AdminProductDeleteFragment extends Fragment {
     private EditText id;
     private Button delete;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class AdminProductDeleteFragment extends Fragment {
                 int var_id = 0;
                 try {
                     var_id = Integer.parseInt(id.getText().toString());
-                } catch (NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
                 try {
@@ -35,7 +36,7 @@ public class AdminProductDeleteFragment extends Fragment {
                     MainActivity3.myAppDatabase.myDao().deleteProduct(product);
                     Toast.makeText(getActivity(), "Έγινε η διαγραφή", Toast.LENGTH_LONG).show();
                     id.setText("");
-                } catch (Exception e){
+                } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                 }

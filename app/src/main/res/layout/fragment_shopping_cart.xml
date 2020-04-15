@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,13 +7,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Shopping Cart"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
         android:background="@color/colorCart"
-        />
+        android:text="Shopping Cart"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
             android:text="Product Id"
             android:textSize="18dp"
             android:textStyle="bold">
-
         </TextView>
 
         <TextView
@@ -38,12 +36,11 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="Quantity"
             android:gravity="center"
             android:padding="10dp"
+            android:text="Quantity"
             android:textSize="18dp"
             android:textStyle="bold">
-
         </TextView>
 
         <TextView
@@ -51,11 +48,10 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Price"
             android:padding="10dp"
+            android:text="Price"
             android:textSize="18dp"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
     <ListView
@@ -64,19 +60,20 @@
         android:layout_height="wrap_content"></ListView>
 
     <TextView
+        android:id="@+id/total_price"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:id="@+id/total_price"
         android:layout_marginLeft="16dp"
-        android:textSize="18dp"
         android:gravity="right"
-        android:text="0.0"/>
+        android:text="0.0"
+        android:textSize="18dp" />
+
     <Button
+        android:id="@+id/checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkout"
+        android:layout_gravity="right"
         android:layout_marginRight="16dp"
-        android:text="Checkout"
-        android:layout_gravity="right"/>
+        android:text="Checkout" />
 
 </LinearLayout>

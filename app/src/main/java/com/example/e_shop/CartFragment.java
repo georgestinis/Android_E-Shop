@@ -22,6 +22,7 @@ public class CartFragment extends Fragment {
     List<Cart> carts = new ArrayList<>();
     TextView total_price;
     Button checkout;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,28 +33,28 @@ public class CartFragment extends Fragment {
         listAdapter = new ListAdapter2(getActivity(), carts);
         listView.setAdapter(listAdapter);
         float price = 0;
-        for (Cart cart : carts){
+        for (Cart cart : carts) {
             Product product = MainActivity2.myAppDatabase.myDao().getProduct(cart.getProduct_id());
-            price +=  product.getPrice() * cart.getQuantity();
+            price += product.getPrice() * cart.getQuantity();
             product.setQuantity(product.getQuantity() - cart.getQuantity());
             MainActivity2.myAppDatabase.myDao().updateProduct(product);
         }
-        total_price.setText("Total Price: "+price+"€");
+        total_price.setText("Total Price: " + price + "€");
         checkout = view.findViewById(R.id.checkout);
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (carts.isEmpty()){
+                if (carts.isEmpty()) {
                     return;
                 }
-                for (Cart cart : carts){
+                for (Cart cart : carts) {
                     try {
                         Sale sale = new Sale(cart.getUser_username(), cart.getProduct_id(), cart.getQuantity());
                         MainActivity2.myAppDatabase.myDao().addSale(sale);
                         MainActivity2.myAppDatabase.myDao().deleteCart(cart);
                         MainActivity2.fragmentManager.beginTransaction().replace(R.id.fragment_container2,
                                 new CartFragment()).commit();
-                    } catch (Exception e){
+                    } catch (Exception e) {
                         String message = e.getMessage();
                         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                     }

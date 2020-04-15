@@ -31,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         i = getIntent();
-        user = (User)i.getSerializableExtra("userobject");
+        user = (User) i.getSerializableExtra("userobject");
         fragmentManager = getSupportFragmentManager();
         myAppDatabase = Room.databaseBuilder(getApplicationContext(), MyAppDatabase.class, "eshopDB").allowMainThreadQueries().fallbackToDestructiveMigration().build();
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -53,17 +53,16 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
 
     @Override
     public void onBackPressed() {
-        if(drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-        else{
+        } else {
             super.onBackPressed();
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,
                         new HomeFragment()).commit();
