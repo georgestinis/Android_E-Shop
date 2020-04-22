@@ -25,6 +25,7 @@ public class LogoutFragment extends Fragment {
                 MainActivity2.user = null;
                 Intent i = new Intent(getActivity(), MainActivity.class);
                 startActivity(i);
+
             }
         });
         return view;
