@@ -42,6 +42,5 @@ public class ProductsFragment extends Fragment {
 
     private void getProducts() {
         products = MainActivity2.myAppDatabase.myDao().getProducts();
-
     }
 }
